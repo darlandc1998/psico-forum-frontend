@@ -1,12 +1,13 @@
-import * as React from 'react';
+import React from 'react';
+import './styles/rsuite';
+import GlobalStyle from './styles/global';
+import Home from './pages/Home';
 
-export interface HelloWorldProps {
-  userName: string;
-  lang: string;
+export default function App() {
+  return (
+    <div id="rootChildren">
+      <Home />
+      <GlobalStyle />
+    </div>
+  );
 }
-
-export const App = (props: HelloWorldProps) => (
-  <h3>
-    Hi {props.userName} from React! Welcome to {props.lang}!
-  </h3>
-);
