@@ -14,4 +14,5 @@ export const ContentHeader = styled(Content)`
 
 export const TitleHeader = styled(Content)`
   font-size: 18px;
+  color: white;
 `;

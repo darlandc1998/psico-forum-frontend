@@ -32,12 +32,7 @@ export default function Login() {
         />
       </Form.Group>
       <Form.Group>
-        <Button
-          color="blue"
-          appearance="primary"
-          type="submit"
-          onClick={handleSubmitForm}
-        >
+        <Button appearance="primary" type="submit" onClick={handleSubmitForm}>
           <Member /> Entrar
         </Button>
       </Form.Group>
