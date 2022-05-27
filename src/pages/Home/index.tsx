@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Content } from '../../components';
 import { ContentHome, HeaderHome, FooterHome } from './styles';
-import { Pc } from '@rsuite/icons';
+import { Global } from '@rsuite/icons';
 import HeaderInfo from './Header';
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <ContentHome>Content</ContentHome>
         <FooterHome>
           Desenvolvido por Darlan Domingos Candiotto
-          <Pc />
+          <Global />
         </FooterHome>
       </Container>
     </div>

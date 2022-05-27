@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 import { Content } from '../../../components';
 
-export const ContentHeaderInfo = styled(Content)`
+export const ContentHeader = styled(Content)`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0px 20px;
 
   .rs-form-group {
     margin: 5px;
   }
 `;
 
-export const HeaderInfo = styled(Content)`
+export const TitleHeader = styled(Content)`
   font-size: 18px;
-  padding: 10px;
 `;
