@@ -7,5 +7,5 @@ const BODY_BACKGROUND_IMAGE =
 export const Container = styled(Content)`
   background: url(${BODY_BACKGROUND_IMAGE}) no-repeat center;
   background-size: cover;
-  opacity: 0.4;
+  overflow: scroll;
 `;
