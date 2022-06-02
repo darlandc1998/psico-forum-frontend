@@ -1,13 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes';
 import './styles/rsuite';
 import GlobalStyle from './styles/global';
-import Home from './pages/Home';
 
 export default function App() {
   return (
     <div id="rootChildren">
-      <Home />
-      <GlobalStyle />
+      <Router>
+        <Routes />
+        <GlobalStyle />
+      </Router>
     </div>
   );
 }
