@@ -8,6 +8,7 @@ export { default as Form } from './Form';
 export { default as Grid } from './Grid';
 export { default as Header } from './Header';
 export { default as Loader } from './Loader';
+export { default as Nav } from './Nav';
 export { default as Panel } from './Panel';
 export { default as PanelGroup } from './PanelGroup';
 export { default as Row } from './Row';
