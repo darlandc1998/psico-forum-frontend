@@ -1,25 +1,19 @@
 import React from 'react';
 import { Container } from '../../components';
-import { ContentHome, HeaderHome, FooterHome } from './styles';
-import { Global } from '@rsuite/icons';
-import HeaderInfo from './Header';
+
+import Footer from '../Footer';
+import Header from '../Header';
+import Content from '../Content';
 import BodyInfo from './Body';
 
-export default function Home() {
-  return (
-    <div className="show-container">
-      <Container>
-        <HeaderHome>
-          <HeaderInfo />
-        </HeaderHome>
-        <ContentHome>
-          <BodyInfo />
-        </ContentHome>
-        <FooterHome>
-          Desenvolvido por Darlan Domingos Candiotto
-          <Global />
-        </FooterHome>
-      </Container>
-    </div>
-  );
-}
+const Home: React.FC = () => (
+  <Container>
+    <Header />
+    <Content>
+      <BodyInfo />
+    </Content>
+    <Footer />
+  </Container>
+);
+
+export default Home;

@@ -1,4 +1,4 @@
-import { Schema } from '../../../../components';
+import { Schema } from '../../../components';
 
 interface IModel {
   email: string;

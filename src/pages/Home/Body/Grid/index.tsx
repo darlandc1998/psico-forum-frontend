@@ -10,7 +10,7 @@ interface IPostResponse {
   createdAt: Date;
 }
 
-export default function GridHome() {
+const GridHome: React.FC = () => {
   const [posts, setPosts] = useState<IPostResponse[]>([]);
 
   useEffect(() => {
@@ -21,6 +21,8 @@ export default function GridHome() {
       { id: 4, title: 'Title 4', text: 'Text 4', createdAt: new Date() },
       { id: 5, title: 'Title 5', text: 'Text 5', createdAt: new Date() },
       { id: 6, title: 'Title 6', text: 'Text 6', createdAt: new Date() },
+      { id: 7, title: 'Title 7', text: 'Text 7', createdAt: new Date() },
+      { id: 8, title: 'Title 8', text: 'Text 8', createdAt: new Date() },
     ]);
   }, []);
 
@@ -40,4 +42,6 @@ export default function GridHome() {
       ))}
     </FlexboxGrid>
   );
-}
+};
+
+export default GridHome;

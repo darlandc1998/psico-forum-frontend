@@ -4,13 +4,13 @@ import Routes from './routes';
 import './styles/rsuite';
 import GlobalStyle from './styles/global';
 
-export default function App() {
-  return (
-    <div id="rootChildren">
-      <Router>
-        <Routes />
-        <GlobalStyle />
-      </Router>
-    </div>
-  );
-}
+const App: React.FC = () => (
+  <div id="rootChildren">
+    <Router>
+      <Routes />
+      <GlobalStyle />
+    </Router>
+  </div>
+);
+
+export default App;

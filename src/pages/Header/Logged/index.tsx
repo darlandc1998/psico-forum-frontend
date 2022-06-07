@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserInfo, Page, DocPass } from '@rsuite/icons';
 import { NavBarContainer, NavItems, ProfileName, Diviser } from './styles';
 
-export default function Logged() {
+const Logged: React.FC = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState('posts');
 
@@ -30,4 +30,6 @@ export default function Logged() {
       <ProfileName>Darlan Domingos Candiotto</ProfileName>
     </NavBarContainer>
   );
-}
+};
+
+export default Logged;

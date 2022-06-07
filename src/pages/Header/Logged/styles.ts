@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Content, Nav } from '../../../../components';
+import { Content, Nav } from '../../../components';
 
 export const NavBarContainer = styled(Content)`
   display: flex;

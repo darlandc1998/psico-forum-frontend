@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Member } from '@rsuite/icons';
-import { Form, Button } from '../../../../components';
+import { Form, Button } from '../../../components';
 import { IModel, model, modelForm } from './form';
 
-export default function Login() {
+const Login: React.FC = () => {
   const formRef = React.useRef();
   const [formValue, setFormValue] = useState<IModel>(model);
 
@@ -38,4 +38,6 @@ export default function Login() {
       </Form.Group>
     </Form>
   );
-}
+};
+
+export default Login;
