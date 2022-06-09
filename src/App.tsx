@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import AppProviders from './hooks';
 import Routes from './routes';
 import './styles/rsuite';
 import GlobalStyle from './styles/global';
@@ -7,7 +8,9 @@ import GlobalStyle from './styles/global';
 const App: React.FC = () => (
   <div id="rootChildren">
     <Router>
-      <Routes />
+      <AppProviders>
+        <Routes />
+      </AppProviders>
       <GlobalStyle />
     </Router>
   </div>
