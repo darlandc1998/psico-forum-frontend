@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ContainerHeader, ContentHeader, TitleHeader } from './styles';
+import { useAuth } from '../../hooks/auth';
 import Login from './Login';
 import Logged from './Logged';
 
 const Header: React.FC = () => {
-  const [authenticated, setAuthenticated] = useState(true);
+  const { user } = useAuth();
 
   return (
     <ContainerHeader>
       <ContentHeader>
         <TitleHeader>PsicoFórum</TitleHeader>
-        {!authenticated ? <Login /> : <Logged />}
+        {!user ? <Login /> : <Logged />}
       </ContentHeader>
     </ContainerHeader>
   );

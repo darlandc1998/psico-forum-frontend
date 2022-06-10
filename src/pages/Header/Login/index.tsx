@@ -1,14 +1,37 @@
 import React, { useState } from 'react';
 import { Member } from '@rsuite/icons';
-import { Form, Button } from '../../../components';
+import { Form, Button, Notification } from '../../../components';
 import { IModel, model, modelForm } from './form';
+import { useAuth } from '../../../hooks/auth';
+import { toaster } from 'rsuite';
 
 const Login: React.FC = () => {
-  const formRef = React.useRef();
+  const { signIn } = useAuth();
+  const formRef = React.useRef<any>();
   const [formValue, setFormValue] = useState<IModel>(model);
 
-  const handleSubmitForm = () => {
-    console.log(formValue, 'Form Value');
+  const handleSubmitForm = async () => {
+    if (formRef && formRef.current && !formRef.current.check()) {
+      return;
+    }
+
+    try {
+      const { email, password } = formValue;
+
+      await signIn({
+        email,
+        password,
+      });
+    } catch (err) {
+      toaster.push(
+        <Notification title="Autenticação" type="error" header="error" closable>
+          Ocorreu um erro ao fazer login, cheque as credenciais.
+        </Notification>,
+        {
+          placement: 'topEnd',
+        },
+      );
+    }
   };
 
   return (

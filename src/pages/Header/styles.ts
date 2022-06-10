@@ -3,7 +3,7 @@ import { Content, Header } from '../../components';
 
 export const ContainerHeader = styled(Header)`
   display: flex;
-  height: 7vh;
+  height: 10vh;
   align-items: center;
 
   background: #80deea;

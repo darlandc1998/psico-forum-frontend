@@ -4,7 +4,7 @@ import { Content } from '../../components';
 export const ContentStyled = styled(Content)`
   display: flex;
   position: absolute;
-  top: 45px;
+  top: calc(10% - 5px);
   bottom: 20px;
   left: 0px;
   right: 0px;
