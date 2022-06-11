@@ -1,11 +1,28 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserInfo, Page, DocPass } from '@rsuite/icons';
-import { NavBarContainer, NavItems, ProfileName, Diviser } from './styles';
+import { useAuth } from '../../../hooks/auth';
+import { UserInfo, Page, DocPass, Exit } from '@rsuite/icons';
+import {
+  NavBarContainer,
+  NavItems,
+  ProfileName,
+  Diviser,
+  LogOut,
+} from './styles';
 
 const Logged: React.FC = () => {
   const navigate = useNavigate();
+  const { user, signOut } = useAuth();
   const [page, setPage] = useState('posts');
+
+  const handleSignOut = () => {
+    signOut();
+    handleGoTo('/home');
+  };
+
+  const handleGoTo = (to: string) => {
+    navigate(to, { replace: true });
+  };
 
   return (
     <NavBarContainer>
@@ -13,21 +30,24 @@ const Logged: React.FC = () => {
         <NavItems.Item
           eventKey="posts"
           icon={<Page style={{ fontSize: 25 }} />}
-          onClick={() => navigate('/home', { replace: true })}
+          onClick={() => handleGoTo('/home')}
         >
           POSTS
         </NavItems.Item>
         <NavItems.Item
           eventKey="my-posts"
           icon={<DocPass style={{ fontSize: 25 }} />}
-          onClick={() => navigate('/my-posts', { replace: true })}
+          onClick={() => handleGoTo('/my-posts')}
         >
           MEUS POSTS
         </NavItems.Item>
       </NavItems>
       <Diviser />
       <UserInfo style={{ fontSize: 25, marginLeft: 5 }} />
-      <ProfileName>Darlan Domingos Candiotto</ProfileName>
+      <ProfileName>{user.name}</ProfileName>
+      <LogOut appearance="subtle" onClick={() => handleSignOut()}>
+        <Exit style={{ fontSize: 25 }} />
+      </LogOut>
     </NavBarContainer>
   );
 };

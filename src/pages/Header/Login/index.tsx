@@ -60,7 +60,6 @@ const Login: React.FC = () => {
           type="password"
           autoComplete="off"
           style={{ width: 200 }}
-          c
         />
       </Form.Group>
       <Form.Group>

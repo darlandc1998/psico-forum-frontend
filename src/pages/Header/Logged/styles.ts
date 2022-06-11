@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Content, Nav } from '../../../components';
+import { Button, Content, Nav } from '../../../components';
 
 export const NavBarContainer = styled(Content)`
   display: flex;
@@ -45,4 +45,13 @@ export const Diviser = styled(Content)`
   width: 2px;
   min-height: 50px;
   margin: 5px;
+`;
+
+export const LogOut = styled(Button)`
+  color: #212121;
+
+  :hover {
+    background: none;
+    color: #212121;
+  }
 `;
