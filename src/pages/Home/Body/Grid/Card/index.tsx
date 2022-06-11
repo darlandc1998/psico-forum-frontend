@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import moment from 'moment';
 import { Card, Body, Title, Date, Cover } from './styles';
 
 interface Post {
@@ -12,16 +13,22 @@ interface Props {
   post: Post;
 }
 
-const CardHome: React.FC<Props> = ({ post }) => (
-  <Card shaded bordered bodyFill>
-    <Cover
-      src={post.cover || 'https://img.icons8.com/ios/452/psychology.png'}
-    />
-    <Body>
-      <Title>{post.title}</Title>
-      <Date>{post.createdAt}</Date>
-    </Body>
-  </Card>
-);
+const CardHome: React.FC<Props> = ({ post }) => {
+  const createdAtFormatted = useMemo(() => {
+    return moment(post.createdAt).format('DD/MM/YYYY HH:mm:ss');
+  }, [post.createdAt]);
+
+  return (
+    <Card shaded bordered bodyFill>
+      <Cover
+        src={post.cover || 'https://img.icons8.com/ios/452/psychology.png'}
+      />
+      <Body>
+        <Title>{post.title}</Title>
+        <Date>{createdAtFormatted}</Date>
+      </Body>
+    </Card>
+  );
+};
 
 export default CardHome;
