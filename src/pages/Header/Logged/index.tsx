@@ -22,11 +22,12 @@ const Logged: React.FC = () => {
 
   const handleGoTo = (to: string) => {
     navigate(to, { replace: true });
+    setPage(to.replace('/', ''));
   };
 
   return (
     <NavBarContainer>
-      <NavItems activeKey={page} onSelect={(item: string) => setPage(item)}>
+      <NavItems activeKey={page}>
         <NavItems.Item
           eventKey="posts"
           icon={<Page style={{ fontSize: 25 }} />}
