@@ -9,12 +9,13 @@ const Login: React.FC = () => {
   const { signIn } = useAuth();
   const formRef = React.useRef<any>();
   const [formValue, setFormValue] = useState<IModel>(model);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmitForm = async () => {
     if (formRef && formRef.current && !formRef.current.check()) {
       return;
     }
-
+    setLoading(true);
     try {
       const { email, password } = formValue;
 
@@ -31,6 +32,8 @@ const Login: React.FC = () => {
           placement: 'topEnd',
         },
       );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -43,7 +46,12 @@ const Login: React.FC = () => {
       model={modelForm}
     >
       <Form.Group controlId="email">
-        <Form.Control name="email" placeholder="email" style={{ width: 250 }} />
+        <Form.Control
+          name="email"
+          placeholder="email"
+          style={{ width: 250 }}
+          readOnly={loading}
+        />
       </Form.Group>
       <Form.Group controlId="password">
         <Form.Control
@@ -52,10 +60,16 @@ const Login: React.FC = () => {
           type="password"
           autoComplete="off"
           style={{ width: 200 }}
+          c
         />
       </Form.Group>
       <Form.Group>
-        <Button appearance="primary" type="submit" onClick={handleSubmitForm}>
+        <Button
+          appearance="primary"
+          type="submit"
+          onClick={handleSubmitForm}
+          loading={loading}
+        >
           <Member /> Entrar
         </Button>
       </Form.Group>
