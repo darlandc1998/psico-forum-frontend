@@ -9,4 +9,14 @@ export const ContainerPosts = styled(Content)`
 
 export const TablePosts = styled(Table)`
   flex: 1;
+
+  .rs-table-body-row-wrapper {
+    cursor: pointer;
+  }
+
+  .rs-table-cell-header .rs-table-cell-content {
+    font-weight: bold;
+    color: #424242;
+    font-size: 14px;
+  }
 `;

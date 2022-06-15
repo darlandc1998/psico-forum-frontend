@@ -16,3 +16,4 @@ export { default as PanelGroup } from './PanelGroup';
 export { default as Row } from './Row';
 export { default as Schema } from './Schema';
 export { default as Table } from './Table';
+export { default as Tag } from './Tag';

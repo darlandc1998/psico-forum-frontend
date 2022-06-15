@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 import api from '../../services';
 import { useAuth } from '../../hooks/auth';
 import { Container, Loader } from '../../components';
 import Header from '../Header';
 import Content from '../Content';
 import Footer from '../Footer';
+import Tag from './Tag';
 import { ContainerPosts, TablePosts } from './styles';
 
 const PersonalPosts: React.FC = () => {
@@ -36,7 +38,10 @@ const PersonalPosts: React.FC = () => {
           {loading ? (
             <Loader />
           ) : (
-            <TablePosts data={posts}>
+            <TablePosts
+              data={posts}
+              onRowClick={(data: any) => console.log(data)}
+            >
               <TablePosts.Column flexGrow={1} align="center" fixed>
                 <TablePosts.HeaderCell>ID</TablePosts.HeaderCell>
                 <TablePosts.Cell dataKey="id" />
@@ -50,9 +55,17 @@ const PersonalPosts: React.FC = () => {
                 <TablePosts.Cell dataKey="text" />
               </TablePosts.Column>
               <TablePosts.Column flexGrow={1} align="center" fixed>
+                <TablePosts.HeaderCell>Criado em</TablePosts.HeaderCell>
+                <TablePosts.Cell>
+                  {rowData =>
+                    moment(rowData.createdAt).format('DD/MM/YYYY HH:mm:ss')
+                  }
+                </TablePosts.Cell>
+              </TablePosts.Column>
+              <TablePosts.Column flexGrow={1} align="center" fixed>
                 <TablePosts.HeaderCell>Publicação</TablePosts.HeaderCell>
                 <TablePosts.Cell>
-                  {rowData => (rowData.published ? 'Publicado' : 'Pendente')}
+                  {rowData => <Tag published={rowData.published} />}
                 </TablePosts.Cell>
               </TablePosts.Column>
             </TablePosts>
