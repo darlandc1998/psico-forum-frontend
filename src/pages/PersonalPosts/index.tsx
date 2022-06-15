@@ -50,7 +50,7 @@ const PersonalPosts: React.FC = () => {
                 <TablePosts.Cell dataKey="text" />
               </TablePosts.Column>
               <TablePosts.Column flexGrow={1} align="center" fixed>
-                <TablePosts.HeaderCell>Publicado</TablePosts.HeaderCell>
+                <TablePosts.HeaderCell>Publicação</TablePosts.HeaderCell>
                 <TablePosts.Cell>
                   {rowData => (rowData.published ? 'Publicado' : 'Pendente')}
                 </TablePosts.Cell>
