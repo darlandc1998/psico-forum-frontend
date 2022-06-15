@@ -38,7 +38,7 @@ const PersonalPosts: React.FC = () => {
           ) : (
             <TablePosts data={posts}>
               <TablePosts.Column flexGrow={1} align="center" fixed>
-                <TablePosts.HeaderCell>Id</TablePosts.HeaderCell>
+                <TablePosts.HeaderCell>ID</TablePosts.HeaderCell>
                 <TablePosts.Cell dataKey="id" />
               </TablePosts.Column>
               <TablePosts.Column flexGrow={1} align="center" fixed>
