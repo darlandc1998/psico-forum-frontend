@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../../../services';
 import { Loader, FlexboxGrid } from '../../../../components';
 import Card from './Card';
+import { WithoutPosts } from './styles';
 
 interface IPostResponse {
   id: number;
@@ -38,7 +39,7 @@ const GridHome: React.FC = () => {
     >
       {loading ? (
         <Loader />
-      ) : (
+      ) : posts.length > 0 ? (
         posts.map(item => (
           <FlexboxGrid.Item
             key={item.id}
@@ -48,6 +49,8 @@ const GridHome: React.FC = () => {
             <Card post={item} />
           </FlexboxGrid.Item>
         ))
+      ) : (
+        <WithoutPosts>Posts não encontrados :(</WithoutPosts>
       )}
     </FlexboxGrid>
   );
