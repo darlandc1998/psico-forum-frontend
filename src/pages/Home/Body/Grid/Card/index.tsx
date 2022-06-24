@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 import { Card, Body, Title, Date, Cover } from './styles';
 
 interface Post {
@@ -14,12 +15,19 @@ interface Props {
 }
 
 const CardHome: React.FC<Props> = ({ post }) => {
+  const navigate = useNavigate();
+
   const createdAtFormatted = useMemo(() => {
     return moment(post.createdAt).format('DD/MM/YYYY HH:mm:ss');
   }, [post.createdAt]);
 
   return (
-    <Card shaded bordered bodyFill>
+    <Card
+      shaded
+      bordered
+      bodyFill
+      onClick={() => navigate(`/post/${post.id}`, { replace: true })}
+    >
       <Cover
         src={post.cover || 'https://img.icons8.com/ios/452/psychology.png'}
       />
