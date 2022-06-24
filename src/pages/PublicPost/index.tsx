@@ -50,7 +50,6 @@ const PublicPost: React.FC = () => {
     try {
       const publicPost = await api.get<PostRequest>(`/posts/${id}`);
       setPost(publicPost.data);
-      console.log(publicPost.data);
     } catch (err) {
       console.error(err);
     } finally {
