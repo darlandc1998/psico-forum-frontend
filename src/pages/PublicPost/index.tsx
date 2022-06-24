@@ -10,6 +10,8 @@ import {
   ContainerPost,
   ContentPost,
   TitlePost,
+  ContentCoverPost,
+  CoverPost,
   TextPost,
   ContentDetailsPost,
   CreationPost,
@@ -67,6 +69,14 @@ const PublicPost: React.FC = () => {
           ) : (
             <ContentPost>
               <TitlePost>{post?.title}</TitlePost>
+              <ContentCoverPost>
+                <CoverPost
+                  src={
+                    post?.cover ||
+                    'https://img.icons8.com/ios/452/psychology.png'
+                  }
+                />
+              </ContentCoverPost>
               <ContentDetailsPost>
                 <AuthorPost>
                   <AuthorTitlePost>Autor:</AuthorTitlePost>

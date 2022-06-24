@@ -14,6 +14,16 @@ export const TitlePost = styled(Content)`
   padding: 5px;
 `;
 
+export const ContentCoverPost = styled(Content)`
+  text-align: center;
+`;
+
+export const CoverPost = styled.img`
+  max-height: 250px;
+  padding: 15px;
+  border-radius: 20px;
+`;
+
 export const TextPost = styled(Content)`
   font-size: 15px;
   padding: 5px;
@@ -21,6 +31,7 @@ export const TextPost = styled(Content)`
 
 export const ContentDetailsPost = styled(Content)`
   display: -webkit-box;
+  padding: 10px 0px;
 `;
 
 export const AuthorPost = styled(Content)`
