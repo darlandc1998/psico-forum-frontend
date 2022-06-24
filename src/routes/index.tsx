@@ -4,6 +4,7 @@ import PrivateRoute from './PrivateRoute';
 
 import Home from '../pages/Home';
 import PersonalPosts from '../pages/PersonalPosts';
+import PublicPost from '../pages/PublicPost';
 
 const Routers: React.FC = () => (
   <div className="show-container">
@@ -14,6 +15,7 @@ const Routers: React.FC = () => (
       </Route>
       //Public routes
       <Route path="/home" element={<Home />} />
+      <Route path="/post/:id" element={<PublicPost />} />
     </Routes>
   </div>
 );
