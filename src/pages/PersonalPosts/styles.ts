@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { Content, Table } from '../../components';
+import { Content, Table, IconButton } from '../../components';
 
 export const ContainerPosts = styled(Content)`
   display: flex;
   flex: 1;
   padding: 10px;
+  justify-content: center;
 `;
 
 export const TablePosts = styled(Table)`
@@ -19,4 +20,13 @@ export const TablePosts = styled(Table)`
     color: #424242;
     font-size: 14px;
   }
+`;
+
+export const ButtonNewPost = styled(IconButton)`
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  z-index: 2;
+  bottom: 25px;
+  right: 20px;
 `;
